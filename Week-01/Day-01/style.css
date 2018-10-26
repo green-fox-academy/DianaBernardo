@@ -1,0 +1,65 @@
+body{
+    background-image: url("/Users/dianabernardo/Desktop/Green Fox/Week-01/Day-01/topography.png");
+    padding: 0px;
+    margin: 0px 20px 20px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+h2{
+    text-align: center;
+    margin: 60px auto auto auto;
+}
+
+h1, h2, h3{
+    font-family: "Niramit";
+}
+
+p{
+    font-family: "Consolas", "Courier";
+}
+
+div{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.deeppink{
+    color: #ff0099;
+}
+
+#dash{
+    text-align:center;
+    margin-top: 40px;
+}
+
+nav{
+    background-color: #333333;
+    text-align: right;
+    background-image: url("/Users/dianabernardo/Desktop/Green Fox/Week-01/Day-01/Unknown.svg");
+    background-repeat: no-repeat;
+    background-position: 100px;
+}
+
+ul{
+    padding: 10px;
+    display: inline-block;
+    height: 30px;
+    margin: auto 100px auto auto;
+}
+
+
+li{
+    display: inline-block;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+
+li a{
+    color: #ff0099;
+    margin: 5px;
+}
