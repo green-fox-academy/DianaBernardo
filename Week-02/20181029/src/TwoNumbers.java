@@ -9,8 +9,8 @@ public class TwoNumbers {
         // Print the result of 22 multiplied by 13
         System.out.println(22 * 13);
         // Print the result of 22 divided by 13 (as a decimal fraction)
-        float a = 22/13;
-        System.out.println(a);
+        double x = 22/13;
+        System.out.println(x);
         // Print the integer part of 22 divided by 13
         System.out.println(22/13);
         // Print the reminder of 22 divided by 13
