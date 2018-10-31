@@ -14,18 +14,20 @@ import java.util.Arrays;
 public class Matrix {
     public static void main(String[] args) {
         String[][] multiArray = new String[4][4];
+
         for (int i = 0; i < multiArray.length; i++) {
             for (int j = 0; j < multiArray[i].length; j++) {
 
                 if (i == j) {
-                    System.out.println("1");
+                    System.out.print("1");
 
-                } else {
-                    System.out.println("0");
+                } else{
+                    System.out.print("0");}
 
+                    if(j == 3){
+                        System.out.println();
                     }
                 }
             }
         }
     }
-

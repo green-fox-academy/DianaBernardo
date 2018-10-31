@@ -8,6 +8,7 @@
 //   `"orchid", "violet", "pink", "hot pink"`
 
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
@@ -19,5 +20,8 @@ public class Colors {
                 {{"orange red", "red", "tomato"}},
                 {{"orchid", "violet", "pink", "hot pink"}}};
 
+                System.out.println(Arrays.deepToString(colors));
+            }
         }
-    }
+
+
