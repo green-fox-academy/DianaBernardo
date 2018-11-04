@@ -11,7 +11,6 @@ public class MileToKmConverter {
 
         double miles = userInput1 * 0.621371192;
 
-        System.out.println(miles);
-
+        System.out.println("You entered " + userInput1 + " kms, or " + miles + " miles.");
     }
 }

@@ -22,7 +22,7 @@ public class PartyIndicator {
         int boys = scanner.nextInt();
         int sum = girls + boys;
 
-            if(sum >= 20){
+            if(sum >= 20 && girls == boys){
             System.out.println("The party is excellent!");
             } else if (girls + boys >= 20 && girls != boys){
                 System.out.println("Quite cool party!");

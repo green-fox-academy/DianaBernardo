@@ -17,9 +17,17 @@ public class DrawDiagonal {
         Scanner scanner = new Scanner(System.in);
         int rows = scanner.nextInt();
 
-        for (int i = 1; i <= rows; i++) {
-            System.out.print("% ");
-            System.out.println("");
+        for (int i = 0; i <= rows; i++) {
+            for (int j = 0; j <= rows; j++) {
+                if (i == 0 || i == rows) {
+                    System.out.print("%");}
+                    else{
+                    System.out.println(" ");
+                }
+
+                    }
+
+                }
+            }
         }
-        }
-    }
+
