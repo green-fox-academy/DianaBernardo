@@ -7,6 +7,7 @@ public class TakesLonger {
         // Using pieces of the quote variable (instead of just redefining the string)
 
         StringBuilder sb = new StringBuilder(quote);
+        System.out.println(quote.indexOf("you"));;
         sb.insert(20," always takes longer than");
 
         System.out.println(sb);
