@@ -11,19 +11,18 @@ public class Purple3D {
         // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
 
         graphics.setColor(new Color(138, 43, 226));
-        int size = 10;
+        int size = 0;
         int x = 0;
         int y = 0;
 
-        for (int i = 0; i < 6; i++) {
-            graphics.fill3DRect(x, y, size, size,true );
+        for (int i = 0; i < 7; i++) {
             size += 10 * i;
+            graphics.fill3DRect(x, y, size, size, true);
             x += size;
             y += size;
 
         }
     }
-
     // Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 320;
