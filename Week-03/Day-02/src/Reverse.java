@@ -9,11 +9,10 @@ public class Reverse {
         System.out.println(reverse(reversed));
     }
 
-    public static String reverse(String a) {
+        public static String reverse(String a){
         String original = "";
-
         for(int i=a.length()-1; i>=0; i--){
-            original += a.charAt(i);
+            original+=a.charAt(i);
         }
         return original;
     }
