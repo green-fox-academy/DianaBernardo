@@ -27,6 +27,4 @@ Daniel Hanley, a cybersecurity engineer at IBM, doesn’t want to be the center 
         String title;
         String text;
         String publicationDate;
-
-
     }
