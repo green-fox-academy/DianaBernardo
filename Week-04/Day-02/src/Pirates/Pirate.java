@@ -2,23 +2,23 @@ package Pirates;
 
 public class Pirate {
 
+    String name;
     int methodcalled = 0;
     boolean sleeping = false;
     boolean alive = true;
+    int drunkness = 0;
 
 
     public int drinkSomeRum() {
-        int drunkState = 0;
-        drunkState++;
-        methodcalled++;
-        return drunkState;
+        drunkness++;
+        return drunkness;
     }
 
 
     public void howsItGoingMate() {
         if(!alive){
         }
-        if (methodcalled <= 4) {
+        if (drunkness <= 4) {
             System.out.println("Pour me anudder!");
         } else {
             System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
@@ -26,8 +26,8 @@ public class Pirate {
         }
     }
 
-    public void die() {
-        alive = false;
+    public boolean die() {
+        return alive = false;
     }
 
     public void brawl(Pirate pirateFighter) {

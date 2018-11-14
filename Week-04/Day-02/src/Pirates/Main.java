@@ -8,16 +8,19 @@ public class Main {
     Pirate Jack = new Pirate();
     Pirate Jones = new Pirate();
 
-    for (int i=0; i<6; i++){
-    Jones.drinkSomeRum();}
+    Ship ship1 = new Ship();
+    ship1.shipName = "Shark";
+    ship1.fillShip();
+    System.out.println(ship1);
 
-    Jones.howsItGoingMate();
+    Ship ship2 = new Ship();
+    ship2.shipName = "Whale";
+    ship2.fillShip();
+    System.out.println(ship2);
 
-    Jack.brawl(Joe);
-
-    System.out.println(Jack);
-
-    Ship Sagres = new Ship();
+    ship1.battle(ship2);
+    System.out.println(ship1);
+    System.out.println(ship2);
 
     }
 }
