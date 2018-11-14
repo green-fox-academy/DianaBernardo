@@ -24,7 +24,5 @@ public class Main {
         set.sharpieset.add(three);
 
         System.out.println(set.countUsable());
-
-
     }
 }

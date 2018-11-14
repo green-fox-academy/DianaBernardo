@@ -18,4 +18,9 @@ public class Animal {
         hunger += 1;
         thirst += 1;
     }
+
+    @Override
+    public String toString() {
+        return "Hunger:" + hunger;
+    }
 }
