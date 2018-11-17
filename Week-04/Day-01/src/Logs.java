@@ -8,24 +8,52 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Logs {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        Path filePath = Paths.get("https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/file-manipulations/logs/log.txt");
+        Path filePath = Paths.get("./log");
+        List<String> lines = new ArrayList<>();
+
         try {
-            List<String> read = Files.readAllLines(filePath);
-            List<String> IP = new ArrayList();
+            lines = Files.readAllLines(filePath);
 
-            for(int i=0; i<=read.size(); i++) {
-               IP.add(read.get(4));
-
-                System.out.println(IP);
-            }
-
-        }catch (IOException exception){
-            System.out.println("");
+        } catch (IOException exception) {
+            exception.printStackTrace();
+            System.out.println("Error!");
         }
+        System.out.println(ip(lines));
+        System.out.println(getPostRatio(lines));
+    }
+
+    public static List<String> ip(List<String> lines) {
+        List<String> ips = new ArrayList<String>();
+
+        for (int i = 0; i < lines.size(); i++) {
+            String ip = lines.get(i).split("\\s+")[5];
+            if (!ips.contains(ip)) {
+                ips.add(ip);
+            }
+        }
+        System.out.println(ips);
+        return null;
+    }
+
+    public static float getPostRatio(List<String> lines) {
+        int getCount = 0;
+        int postCount = 0;
+        String getPost = new String();
+
+        for (int i = 0; i < lines.size() ; i++) {
+            if(lines.get(i).split("\\s+")[6].equals("GET")) {
+                getCount++;
+            }
+            if (lines.get(i).split("\\s+")[6].equals("POST")) {
+                postCount++;
+            }
+        }
+        return (float) getCount / postCount;
     }
 }
