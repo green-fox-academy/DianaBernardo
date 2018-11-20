@@ -16,7 +16,7 @@ public class Garden {
         plants = new ArrayList<>();
     }
 
-    public int thirsty(int water) {
+    public int thirsty(int waterAmount) {
         for (int i = 0; i < plants.size(); i++) {
             if (plants.get(i).isThirsty) {
                 thirstyElements++;
@@ -37,9 +37,10 @@ public class Garden {
     }
 
     public String status() {
+        String string = "";
         for (int i = 0; i < plants.size(); i++) {
-           plants.get(i).status();
+            string += plants.get(i).status() + "\n";
         }
-        return status();
+        return string;
     }
 }

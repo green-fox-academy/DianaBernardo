@@ -13,9 +13,7 @@ public class Plant {
     public Plant(int waterAmount, String color, String type) {
         this.waterAmount = waterAmount;
         this.color = color;
-    }
-
-    public void isThirsty() {
+        this.type = type;
     }
 
     public void watering(int water, int thirstyElements) {
