@@ -1,16 +1,12 @@
-package Homework;
+package GreenFoxOrganization;
 
-public class Student {
-    String name;
-    int age;
-    String gender;
+public class Student extends Person{
+
     String previousOrganization;
     int skippedDays = 0;
 
     public Student (String name, int age, String gender, String previousOrganization) {
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
+        super(name, age, gender);
         this.previousOrganization = previousOrganization;
     }
 
@@ -23,7 +19,7 @@ public class Student {
     }
 
     public void introduce() {
-        System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " from " + previousOrganization + " who skipped " + skippedDays + " days from the course already");
+        System.out.println("Hi, I'm " + name + ", a " + age + "year old " + gender + "from " + previousOrganization + " who skipped " + skippedDays + " days from the course already");
     }
 
     public void getGoal() {
