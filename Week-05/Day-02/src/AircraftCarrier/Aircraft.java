@@ -2,21 +2,24 @@ package AircraftCarrier;
 
 public class Aircraft {
 
-    int ammoStore;
-    int maxAmmo;
-    int baseDamage;
-    String type;
-    int refillAmmo = 300;
-    boolean isPriority;
-    int ammoNeeded;
+    private int ammoStore;
+    private int maxAmmo;
+    private int baseDamage;
+    public boolean priority;
 
-    public Aircraft (int ammoStore, int maxAmmo, int baseDamage, String type, boolean isPriority, int ammoNeeded) {
+    public int getAmmoStore() {
+        return ammoStore;
+    }
+
+    public int getBaseDamage() {
+        return baseDamage;
+    }
+
+    public Aircraft (int ammoStore, int maxAmmo, int baseDamage, boolean priority) {
         this.ammoStore = ammoStore;
         this.maxAmmo = maxAmmo;
         this.baseDamage = baseDamage;
-        this.type = type;
-        this.isPriority = isPriority;
-        this.ammoNeeded = ammoNeeded;
+        this.priority = priority;
     }
 
     public int fight() {
@@ -25,17 +28,20 @@ public class Aircraft {
         return Alldamage;
     }
 
-    public int refill(int refillAmmo) {
-        while(ammoStore < maxAmmo){
-            ammoStore++;
-        }
-        int remainingAmmo = refillAmmo - maxAmmo;
-        return remainingAmmo;
+    public void refill() {
+        ammoStore = maxAmmo;
     }
 
-    public String getstatus() {
-        String status = "Type:" + type + ", Ammo:" + ammoStore + ", Base Damage: " + baseDamage + ", All Damage: ";
-        System.out.println(status);
-        return status;
+    private String getType() {
+        return getClass().getSimpleName();
+    }
+
+
+    public void getstatus() {
+        System.out.println ("Type:" + getType() + ", Ammo:" + ammoStore + ", Base Damage: " + baseDamage + ", All Damage: " + baseDamage * ammoStore);
+    }
+
+    boolean isPriority() {
+        return priority;
     }
 }

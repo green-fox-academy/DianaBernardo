@@ -5,27 +5,53 @@ import java.util.List;
 
 public class Carrier {
 
-    int ammoStore;
-    int healthPoint;
+    private int ammo;
+    private int healthPoint;
 
-    public Carrier(int ammoStore, int healthPoint) {
-        this.ammoStore = ammoStore;
-        this.healthPoint = healthPoint;
+    private int getAmmo() {
+        return ammo;
+    }
+
+    public void setAmmo(int ammoToFill) {
+        while (this.ammo > 0) {
+            for (Aircraft aircraft1 : aircrafts) {
+                aircraft1.refill();
+            }
+        }
     }
 
     List<Aircraft> aircrafts;
 
-    public Carrier() {
+    public Carrier(int ammo, int healthPoint) {
+        this.ammo = ammo;
+        this.healthPoint = healthPoint;
         aircrafts = new ArrayList<>();
     }
+}
 
-    public List<Aircraft> aircrafts(Aircraft aircraft) {
-        aircrafts.add(aircraft);
-        return aircrafts;
+    /*
+    void add(Aircraft newAircraft) {
+        aircrafts.add(newAircraft);
     }
 
-    public void fill() {
-        try {
+    public void fill(int ammo) {
+
+
+
+        for (Aircraft aircraft1 :
+                aircrafts) {
+            if (ammo > 0 && this.ammo > 0) {
+                try {
+                    if (aircraft1.isPriority()) {
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+       /* try {
             int totalAmmoNeeded = 0;
             for (int i = 0; i < aircrafts.size(); i++) {
                 totalAmmoNeeded += aircrafts.get(i).ammoNeeded;
@@ -48,5 +74,5 @@ public class Carrier {
     public void fight(Carrier oponent) {
         this.ammoStore = 0;
         healthPoint -= AllDamage;
-    }
-}
+
+        */
