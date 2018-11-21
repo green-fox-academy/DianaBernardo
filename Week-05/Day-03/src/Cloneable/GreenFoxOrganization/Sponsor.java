@@ -1,6 +1,6 @@
 package GreenFoxOrganization;
 
-public class Sponsor extends Person {
+public class Sponsor extends GreenFoxOrganization.Person {
     String company;
     int hiredStudents;
 

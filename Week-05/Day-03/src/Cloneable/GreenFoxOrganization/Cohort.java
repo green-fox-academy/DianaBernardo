@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Cohort {
     String name;
-    List<Student> students;
-    List<Mentor> mentors;
+    List<GreenFoxOrganization.Student> students;
+    List<GreenFoxOrganization.Mentor> mentors;
 
     public Cohort(String name) {
         this.name = name;
@@ -15,11 +15,11 @@ public class Cohort {
     }
 
 
-    public void addStudent(Student student) {
+    public void addStudent(GreenFoxOrganization.Student student) {
         students.add(student);
     }
 
-    public void addMentor(Mentor mentor) {
+    public void addMentor(GreenFoxOrganization.Mentor mentor) {
         mentors.add(mentor);
     }
 
