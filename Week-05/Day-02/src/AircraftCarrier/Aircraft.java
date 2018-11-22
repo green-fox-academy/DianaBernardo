@@ -7,6 +7,11 @@ public class Aircraft {
     private int baseDamage;
     public boolean priority;
 
+
+    public int getMaxAmmo() {
+        return maxAmmo;
+    }
+
     public int getAmmoStore() {
         return ammoStore;
     }

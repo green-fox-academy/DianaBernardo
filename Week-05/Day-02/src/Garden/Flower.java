@@ -5,17 +5,11 @@ public class Flower extends Plant {
     String type;
 
     public Flower(int waterAmount, String color, String type) {
-        super(waterAmount, color, type);
-    }
-
-    public void isThirsty(int waterAmount) {
-        if (waterAmount < 5){
-            isThirsty = true;
-        }
+        super(waterAmount, color, type, 5, 0.75);
 }
 
     public void watering() {
-        double waterGot = wateringAmount * 0.75;
+        double waterGot = wateringAmount * absorption;
         waterAmount += waterGot;
     }
 }

@@ -1,4 +1,4 @@
-package AircraftCarrier;
+/*package AircraftCarrier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,50 +29,59 @@ public class Carrier {
     }
 }
 
-    /*
+
     void add(Aircraft newAircraft) {
         aircrafts.add(newAircraft);
     }
 
-    public void fill(int ammo) {
-
-
+    public void fill() {
 
         for (Aircraft aircraft1 :
                 aircrafts) {
-            if (ammo > 0 && this.ammo > 0) {
-                try {
-                    if (aircraft1.isPriority()) {
-
+            if (ammo > 0) {
+                if (aircraft1.isPriority()) {
+                    ammo -= aircraft1.getMaxAmmo() - aircraft1.getAmmoStore();
+                    aircraft1.refill(ammo);
+                    if (ammo <= 0) {
+                        break;
                     }
-
                 }
             }
         }
+
+        for (Aircraft aircraft1 :
+                aircrafts) {
+            if (ammo > 0) {
+                if (!aircraft1.isPriority()) {
+                    ammo -= aircraft1.getMaxAmmo() - aircraft1.getAmmoStore();
+                    aircraft1.refill(ammo);
+                    if (ammo <= 0) {
+                        break;
+                    }
+                }
+            }
+        }
+
+}
+
+    void fight(Carrier oponent) {
+        for (Aircraft aircraft : aircrafts) {
+            oponent.healthPoint -= aircraft.getAmmoStore() * aircraft.getBaseDamage();
+        }
+    }
+
+    void getStatus() {
+    int maxDamage = 0;
+    if(healthPoint <= 0) {
+        System.out.println("It's dead Jim :(");
+    }
+    else {
+        for (Aircraft aircraft: aircrafts) {
+            maxDamage += aircraft.getAmmoStore() * aircraft.getBaseDamage();
+            aircraft.getstatus();
+        }
+        System.out.println("Type: " + getClass().getName() + " Aircraft count: " + aircrafts.size() + " Ammo storage: " + ammo + " Total damage: " + maxDamage);
+    }
     }
 }
-       /* try {
-            int totalAmmoNeeded = 0;
-            for (int i = 0; i < aircrafts.size(); i++) {
-                totalAmmoNeeded += aircrafts.get(i).ammoNeeded;
-
-                if(totalAmmoNeeded <= ammoStore) {
-                    aircrafts.get(i).refill(300);
-                    ammoStore -= totalAmmoNeeded;
-                }
-                else {
-                    if(aircrafts.get(i).isPriority) {
-                        aircrafts.get(i).refill(300);
-                    }
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("There are not enough ammos");
-        }
-    }
-
-    public void fight(Carrier oponent) {
-        this.ammoStore = 0;
-        healthPoint -= AllDamage;
-
-        */
+*/
