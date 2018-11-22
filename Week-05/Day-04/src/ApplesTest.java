@@ -5,14 +5,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ApplesTest {
 
-    @BeforeEach
-    void setUp() {
-        System.out.println("This is the before test");
-    }
+  @BeforeEach
+  void setUp() {
+    System.out.println("This is the before test");
+  }
 
-    @Test
-    void getApple() {
-        Apples apple = new Apples();
-        assertEquals("apple", apple.getApple());
-    }
+  @Test
+  void getApple() {
+    Apples apple = new Apples();
+    assertEquals("apple", apple.getApple());
+  }
 }
