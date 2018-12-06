@@ -1,0 +1,86 @@
+body {
+    width: 500px;
+    padding: 40px;
+    border: 1px solid black;
+    background-color: whitesmoke
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid black;
+    height: 35px;
+    width: 200px;
+}
+
+#name:hover, #email:hover, #pwd:hover, #pwdconf:hover{
+    border-bottom: 2px solid green;
+}
+
+button {
+    margin-top: 20px;
+    background-color:rgb(33, 107, 33);
+    color: aliceblue;
+    height: 40px;
+    width: 120px;
+    border-radius: 4px;
+}
+
+.circle {
+    border: darkgray;
+    border-radius: 50%;
+    background-color: darkgrey;
+    color: black;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 8px;
+    margin: 20px;
+    position: absolute;
+    left: 250px;
+    top: 170px;
+}
+
+.social {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+}
+
+#facebook {
+    border: 1px solid #3b5998;
+    background-color:#3b5998; 
+    color: aliceblue; 
+    text-align: center;
+    height: 15px;
+    width: 170px;
+    padding: 10px;
+    position: absolute;
+    left: 350px;
+    top: 120px
+}
+
+#twitter {
+    border: 1px solid #1da1f2;
+    background-color:#1da1f2; 
+    color: aliceblue; 
+    text-align: center;
+    height: 15px;
+    width: 170px;
+    padding: 10px;
+    position: absolute;
+    left: 350px;
+    top: 190px
+}
+
+#google {
+    border: 1px solid #db4437;
+    background-color:#db4437; 
+    color: aliceblue; 
+    text-align: center;
+    height: 15px;
+    width: 170px;
+    padding: 10px;
+    position: absolute;
+    left: 350px;
+    top: 260px
+}
