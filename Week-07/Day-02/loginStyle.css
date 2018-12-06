@@ -1,0 +1,60 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid grey;
+    width: 350px;
+    margin: 20px solid grey;
+    background-color: whitesmoke
+}
+
+
+div {
+    padding: 25px;
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    margin-top: 8px;
+}
+
+#username:hover {
+    border: 2px solid lightseagreen;
+}
+
+#password:hover {
+    border: 2px solid lightseagreen;
+}
+
+button {
+    border-radius: 20px;
+    background-color: black;
+    color: aliceblue;
+    padding: 10px 25px;
+}
+
+h2 {
+    padding: 30px; 
+    letter-spacing: 1px;
+    size: 30px;
+}
+
+label {
+    font-size: 15px;
+}
+
+span {
+    font-size: 10px;
+    position: relative;
+    float: right;
+    padding-right: 55px;
+    padding-top: 10px;
+
+}
+
+a{
+    color:black;
+}
+
+a:hover {
+    color: blue;
+}
