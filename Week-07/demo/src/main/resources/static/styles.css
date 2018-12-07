@@ -1,0 +1,61 @@
+body{
+    font-family: "Adobe Garamond Pro";
+    padding: 10px 40px;
+}
+
+button {
+    background-color: firebrick;
+    border: darkgoldenrod;
+    color: whitesmoke;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+}
+
+form {
+    padding-bottom: 20px;
+}
+
+#bar {
+    width: 300px;
+    height: 25px;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+#bar:hover {
+    border: 2px solid firebrick;
+}
+
+#search {
+    color: whitesmoke;
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+}
+
+h1 {
+    color: darkgoldenrod;
+    border-bottom: 1px solid firebrick;
+    width: 820px;
+}
+
+table {
+    font-family: "Adobe Garamond Pro";
+    text-align: center;
+}
+
+td {
+    border: 1px solid darkgoldenrod;
+    width: 200px;
+    height: 40px;
+}
+
+
+thead {
+    background-color: darkgoldenrod;
+    color: whitesmoke;
+    font-weight: bold;
+    width: 200px;
+}
+
