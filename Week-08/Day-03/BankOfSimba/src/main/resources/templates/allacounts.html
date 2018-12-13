@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1> Clients of Bank of Simba</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Balance</td>
+                <td>Animal Type</td>
+                <td>Index</td>
+                <td>King</td>
+                <td>Good guy?</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="account : ${accounts}" th:object="${account}">
+            <td th:text="*{name}"></td>
+            <td th:text="|*{#numbers.formatDecimal(balance,1,2)}| + ' zebras'"></td>
+            <td th:text="*{animalType}"></td>
+            <td th:text="${accountStat.index}"></td>
+            <td th:utext="*{king} ? '<em><b>King</b></em>' : 'Not King'"></td>
+            <td th:text="*{goodGuy} ? 'Good One' : 'Bad Guy'"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form th:action="@{/raisebalance}" th:method="post">
+        <label for="raiseButton">Whose account do you want to raise the balance on?</label>
+        <input type="text" name="q" id="raiseButton">
+        <button type="submit">Raise</button>
+    </form>
+
+    <form th:action="@{/accounts/add}" th:method="GET">
+        <button type="submit">Add new account</button>
+    </form>
+</body>
+</html>

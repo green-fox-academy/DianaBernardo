@@ -1,0 +1,35 @@
+table {
+    font-family: "American Typewriter";
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 30px;
+}
+
+thead {
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: black;
+    text-align: center;
+}
+
+thead td {
+    width: 100px;
+    height: 50px;
+    border: 1px solid whitesmoke;
+}
+
+tbody td {
+    height: 40px;
+    border: 1px solid black;
+}
+
+tbody tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+h1 {
+    font-family: "American Typewriter";
+    color: black;
+    margin: 30px 150px;
+}
