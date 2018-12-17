@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+</head>
+<body>
+<form th:action="@{/nutrition}" method="post" id="eating">
+    <label for="eating">Food</label>
+    <select name="food" form="eating">
+        <option value="burger">Burger</option>
+        <option value="pizza">Pizza</option>
+        <option value="pasta">Pasta</option>
+    </select>
+    <label for="eating">Drink</label>
+    <select name="drink" form="eating">
+        <option value="burger">Coke</option>
+        <option value="pizza">Water</option>
+        <option value="coffee">Coffee</option>
+    </select>
+    <button type="submit" formaction="/index">Change</button>
+</form>
+</body>
+</html>
