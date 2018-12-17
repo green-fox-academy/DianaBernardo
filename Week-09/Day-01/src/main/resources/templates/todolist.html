@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Todo CRUD App</title>
 </head>
 <body>
-$END$
+<h2>Todos for today:</h2>
+<ul th:each="todo : ${todos}">
+    <li th:text="*{todo.getTitle()}"></li>
+</ul>
 </body>
 </html>
