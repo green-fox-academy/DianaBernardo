@@ -18,16 +18,16 @@ public class DoUntilController {
 
   @PostMapping("/dountil/{action}/")
   public Object dountil(@PathVariable("action") String action, @RequestBody (required = false) DoUntil until) {
-  if (until == null) {
-    return new RestError("Please provide a number!");
-  } else {
-    if (action.equalsIgnoreCase("sum")) {
-      return new Result(service.sum(until.getUntil()));
-    } else if (action.equalsIgnoreCase("factor")) {
-      return new Result(service.factor(until.getUntil()));
-    }else {
-      return new RestError("This action is not implemented.");
+    if (until == null) {
+      return new RestError("Please provide a number!");
+    } else {
+      if (action.equalsIgnoreCase("sum")) {
+        return new Result(service.sum(until.getUntil()));
+      } else if (action.equalsIgnoreCase("factor")) {
+        return new Result(service.factor(until.getUntil()));
+      } else {
+        return new RestError("This action is not implemented.");
+      }
     }
-  }
   }
 }

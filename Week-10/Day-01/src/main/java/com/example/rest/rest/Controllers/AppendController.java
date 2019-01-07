@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 @RestController
 public class AppendController {
 
-  @GetMapping("/appenda/")
+  @GetMapping("/appenda")
   public Object appender(@RequestParam(value = "appended", required = false) String appendable) {
     if (appendable != null) {
       return new Append(appendable + "a");
