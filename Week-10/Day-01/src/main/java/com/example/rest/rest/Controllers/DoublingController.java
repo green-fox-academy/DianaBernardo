@@ -1,6 +1,7 @@
 package com.example.rest.rest.Controllers;
 
 import com.example.rest.rest.Models.Doubled;
+import com.example.rest.rest.Models.RestError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +14,7 @@ public class DoublingController {
     if(input != null) {
       return new Doubled(input);
     } else {
-      Error error = new Error("Please provide an input!");
-      return error;
+      return new RestError ("Please provide an input!");
     }
   }
 }
