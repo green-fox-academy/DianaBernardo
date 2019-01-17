@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -47,7 +48,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
 
     http.csrf().disable()
-        .authorizeRequests().antMatchers("**/rest/**").authenticated()
+        .authorizeRequests().antMatchers("/add").authenticated()
         .and()
         .exceptionHandling().authenticationEntryPoint(entryPoint)
         .and()
@@ -55,6 +56,12 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
 
     http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     http.headers().cacheControl();
+  }
 
+
+  //with predefined users
+  @Autowired
+  public void configureInMemory(AuthenticationManagerBuilder auth) throws Exception {
+    auth.inMemoryAuthentication().withUser("diana").password("{noop}password").roles("USER");
   }
 }

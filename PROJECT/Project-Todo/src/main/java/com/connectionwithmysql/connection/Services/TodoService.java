@@ -5,6 +5,7 @@ import com.connectionwithmysql.connection.Models.Todo;
 import com.connectionwithmysql.connection.Repository.TodoRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TodoService {
@@ -35,7 +36,7 @@ public class TodoService {
     return todoRepository.findAllByAssignee(assignee);
   }
 
-  public Object findTodo(Long id) {
-    return todoRepository.findById(id);
+  public Todo findTodo(Long id) {
+      return todoRepository.findById(id).get();
   }
 }

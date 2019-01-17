@@ -1,8 +1,6 @@
 package com.connectionwithmysql.connection.Controller;
 
 import com.connectionwithmysql.connection.Models.Assignee;
-import com.connectionwithmysql.connection.Repository.AssigneeRepository;
-import com.connectionwithmysql.connection.Repository.TodoRepository;
 import com.connectionwithmysql.connection.Models.Todo;
 import com.connectionwithmysql.connection.Services.AssigneeService;
 import com.connectionwithmysql.connection.Services.TodoService;
