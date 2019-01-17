@@ -24,12 +24,11 @@ public class Todo {
   private Assignee assignee;
 
 
-  public Todo(String title, boolean urgent, boolean done, Assignee assignee, LocalDate date) {
+  public Todo(String title, boolean urgent, boolean done, Assignee assignee) {
     this.title = title;
     this.urgent = false;
     this.done = false;
     this.assignee = assignee;
-    this.date = LocalDate.now();
   }
 
 

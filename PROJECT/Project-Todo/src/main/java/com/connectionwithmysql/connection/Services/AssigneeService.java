@@ -26,7 +26,7 @@ public class AssigneeService {
     assigneeRepository.save(assignee);
   }
 
-  public Object findAssignee(Long id) {
-    return assigneeRepository.findById(id);
+  public Assignee findAssignee(Long id) {
+    return assigneeRepository.findById(id).get();
   }
 }

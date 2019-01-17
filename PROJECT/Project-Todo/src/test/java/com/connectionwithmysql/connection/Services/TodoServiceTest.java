@@ -43,7 +43,7 @@ class TodoServiceTest {
 
     assertNotNull(todo2);
     assertEquals("Learn this stuff", todo2.getTitle());
-    assertFalse(todo2.isDone());
+    assertFalse(todo2 .isDone());
   }
 
 }

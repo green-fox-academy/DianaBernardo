@@ -39,4 +39,5 @@ dependencies {
     compile("com.h2database:h2")
     compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.7.0'
     testCompile "org.mockito:mockito-core:1.+"
+    compile group: 'org.modelmapper', name: 'modelmapper', version: '0.7.5'
 }
