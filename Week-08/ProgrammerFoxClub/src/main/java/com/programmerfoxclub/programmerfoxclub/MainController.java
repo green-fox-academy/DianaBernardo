@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MainController {
 
+  @Autowired
   FoxService foxService;
 
-  @Autowired
+
   public MainController(FoxService foxService) {
     this.foxService = foxService;
   }
@@ -30,7 +31,7 @@ public class MainController {
   }
 
   @GetMapping("/login")
-  public String showLogin() {
+  public String showLogin(Fox fox) {
     return "login";
   }
 
@@ -42,7 +43,9 @@ public class MainController {
   }
 
   @GetMapping("/nutritionStore")
-  public String nutrition() {
+  public String nutrition(Model model, @ModelAttribute("foodlist") String food, @ModelAttribute("drinklist") String drink) {
+    model.addAttribute("foodlist", foxService.getFoodList());
+    model.addAttribute("drinklist", foxService.getDrinkList());
     return "nutrition";
   }
 }

@@ -13,21 +13,13 @@ public class HomeController {
 
   List<BankAccount> accounts;
   BankAccount simba;
-  BankAccount nala;
-  BankAccount zazu;
-  BankAccount timon;
-  BankAccount pumba;
 
   public HomeController() {
     this.accounts = new ArrayList<>();
-    nala = new BankAccount("Nala", 3500.00, "lion", false, true);
-    zazu = new BankAccount("Zazu", 1000.00, "bird", false, false);
-    timon = new BankAccount("Timon", 9999.99, "meerkat", true, true);
-    pumba = new BankAccount("Pumba", 88.88, "warthog", true, true);
-    accounts.add(nala);
-    accounts.add(zazu);
-    accounts.add(timon);
-    accounts.add(pumba);
+    accounts.add(new BankAccount("Nala", 3500.00, "Lion", false, true));
+    accounts.add(new BankAccount("Zazu", 1000.00, "Bird", false, false));
+    accounts.add(new BankAccount("Timon", 9999.99, "Meerkat", true, true));
+    accounts.add(new BankAccount("Pumba", 5.00, "Warthog", true, true));
   }
 
 
@@ -46,7 +38,7 @@ public class HomeController {
   @GetMapping ("/accounts")
   public String showAccounts(Model model) {
     model.addAttribute("accounts", accounts);
-    return "allacounts";
+    return "accounts";
   }
 
   @PostMapping("/raisebalance")

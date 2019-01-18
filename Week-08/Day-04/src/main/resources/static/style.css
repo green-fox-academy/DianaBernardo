@@ -1,0 +1,22 @@
+a {
+    font-size: 30px;
+    color: royalblue;
+}
+
+body {
+    font-family: Avenir;
+    padding: 10px 20px;
+}
+
+input {
+    width: 200px;
+    border-radius: 5px;
+}
+
+input:hover {
+    border: 2px solid royalblue;
+}
+
+li {
+    height: 70px;
+}

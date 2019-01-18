@@ -13,21 +13,25 @@ public class YellowBoard {
         graphics.setColor(Color.YELLOW);
         graphics.fillRect(0, 0, WIDTH, HEIGHT);
 
-        int size = WIDTH / 3;
-        rectangles(5, size, 0, size, graphics);
-
-    }
-
-    public static void rectangles(int n, int x, int y, int size, Graphics graphics) {
-
-        if (n == 0) {
+        int size = HEIGHT;
+        int initialX = 0;
+        int initialY = 0;
+        rectangles(initialX, initialY, size, graphics);
         }
-        else {
+
+        public static void drawRectangle(int x, int y, int size, Graphics graphics) {
+        graphics.drawRect(x, y, size, size);
+        }
+
+        public static void rectangles(int x, int y, int size, Graphics graphics) {
+        drawRectangle(x, y, size, graphics);
+        graphics.setColor(Color.BLACK);
+        if (size == HEIGHT) {
             size = WIDTH / 3;
-            graphics.setColor(Color.BLACK);
-            graphics.drawRect(x, y, size, size);
-            graphics.drawRect(size + x/3,   y/3, size/3, size/3);
-            //rectangles(n-1, x + size/3, y+size/3, size/3, graphics);
+            rectangles(x + size / 3, y, size / 3, graphics);
+            rectangles(x, y + size / 3, size / 3, graphics);
+            rectangles(x + 2 * (size / 3), y + size / 3, size / 3, graphics);
+            rectangles(x + size / 3, y + 2 * (size / 3), size / 3, graphics);
         }
     }
 
@@ -47,7 +51,7 @@ public class YellowBoard {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
-    }
+}
 
     static class ImagePanel extends JPanel {
         @Override

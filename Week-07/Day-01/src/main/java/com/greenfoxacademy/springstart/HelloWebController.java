@@ -12,8 +12,6 @@ import java.awt.*;
 @Controller
 public class HelloWebController {
 
-
-
   @RequestMapping("/web/greeting")
   public String greeting(Model model) {
     Greeting greeting1 = new Greeting("bla bla");
@@ -24,7 +22,4 @@ public class HelloWebController {
     model.addAttribute("randomColor", greeting1.colorRandom());
     return "greeting";
   }
-
-
-
 }

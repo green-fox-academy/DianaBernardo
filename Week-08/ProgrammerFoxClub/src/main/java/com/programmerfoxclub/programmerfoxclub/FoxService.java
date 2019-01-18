@@ -8,16 +8,34 @@ import java.util.List;
 @Service
 public class FoxService {
   List<Fox> foxes;
+  private List<String> foodList;
+  private List<String> drinkList;
 
   public FoxService() {
     this.foxes = new ArrayList<>();
+    foodList = new ArrayList<>();
+    drinkList = new ArrayList<>();
+    foodList.add("Pizza");
+    foodList.add("Burger");
+    foodList.add("Bacalhau Com Natas");
+    drinkList.add("Coke");
+    drinkList.add("Tea");
+    drinkList.add("Water");
   }
 
-  public List getFoxes() {
-    return foxes;
+  public List<String> getFoodList() {
+    return foodList;
   }
 
-  public void setFoxes(List<Fox> foxes) {
-    this.foxes = foxes;
+  public void setFoodList(List<String> foodList) {
+    this.foodList = foodList;
+  }
+
+  public List<String> getDrinkList() {
+    return drinkList;
+  }
+
+  public void setDrinkList(List<String> drinkList) {
+    this.drinkList = drinkList;
   }
 }

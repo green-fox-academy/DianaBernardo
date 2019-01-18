@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Your message encoded</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
+<div>
+    <h2>Let's play spies...</h2>
 <form th:action="@{/useful/encode}" method="post">
     <label for="word">Word to encode</label>
     <input type="text" name="word" id="word" required/>
@@ -12,7 +15,10 @@
     <input type="text" name="number" id="number" required/>
     <button type="submit"></button>
 </form>
-<h2>Your message encoded is:</h2>
+</div>
+<div>
+<h3>Your message encoded is:</h3>
 <p th:text="${word}"></p>
+</div>
 </body>
 </html>

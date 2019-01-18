@@ -13,7 +13,7 @@
 <img src="/greenfox.png"/>
 
 <div>
-    <p th:object="${fox}" th:text="'This is ' + *{name} + ' Currently living on'"></p>
+    <p th:object="${fox}" th:text="'This is ' + *{name} + ' Currently living on ' + *{food} + ' and ' + *{drink}"></p>
 </div>
 <div>
     <h2>Known Tricks</h2>

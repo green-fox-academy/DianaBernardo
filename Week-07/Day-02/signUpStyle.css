@@ -14,7 +14,7 @@ input {
     width: 200px;
 }
 
-#name:hover, #email:hover, #pwd:hover, #pwdconf:hover{
+input:hover{
     border-bottom: 2px solid green;
 }
 

@@ -1,11 +1,13 @@
 package com.reddit.reddit;
 
 import com.reddit.reddit.Repositories.PostRepository;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class Post {
@@ -17,14 +19,19 @@ public class Post {
   private String url;
   private int votes;
 
-  public Post(String title, String url, int votes) {
+
+  @DateTimeFormat(pattern = "yyyy-MM-dd")
+  private LocalDate date;
+
+  public Post(String title, String url, int votes, LocalDate date) {
     this.title = title;
     this.url = url;
     this.votes = 0;
+    this.date = LocalDate.now();
   }
 
   public Post() {
-
+    this.date = LocalDate.now();
   }
 
   public Long getId() {
@@ -57,5 +64,18 @@ public class Post {
 
   public void setVotes(int votes) {
     this.votes = votes;
+  }
+
+  public LocalDate getDate() {
+    return date;
+  }
+
+  public void setDate(LocalDate date) {
+    this.date = date;
+  }
+
+  @Override
+  public String toString() {
+    return "" + date;
   }
 }

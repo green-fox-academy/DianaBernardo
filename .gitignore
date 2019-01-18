@@ -5,3 +5,6 @@ out
 
 # if you have a mac
 .DS_Store
+
+.idea/**/gradle.xml
+.idea/**/libraries

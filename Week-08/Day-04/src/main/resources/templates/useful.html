@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Useful Main Page</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
-    <a th:href="@{/useful/colored}">Colored Background</a><br>
-    <a th:href="@{/useful/email}">Email validation</a><br>
-    <a th:href="@{/useful/encode}">Encode</a><br>
+<ul>
+    <li><a th:href="@{/useful/colored}">Colored Background</a></li>
+    <li><a th:href="@{/useful/email}">Email validation</a></li>
+    <li><a th:href="@{/useful/encode}">Encode</a><br></li>
+
+</ul>
+
 </body>
 </html>
