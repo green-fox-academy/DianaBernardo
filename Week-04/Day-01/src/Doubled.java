@@ -10,7 +10,6 @@ public class Doubled {
 
         Path filepath = Paths.get("zenOfPython.txt");
 
-
         try{
 
             List<String> lines = Files.readAllLines(filepath);
@@ -18,13 +17,10 @@ public class Doubled {
             String decoded = "";
 
             for(String str : lines) {
-
-
                 for (int i = 0; i < str.length(); i+=2) {
                     decoded += (str.substring(i, i+1));
                 }
                 decoded += "\n";
-
             }
             System.out.println(decoded);
         }catch (Exception e){

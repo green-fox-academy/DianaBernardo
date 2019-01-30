@@ -7,14 +7,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CopyFile {
     public static void main(String[] args) {
 
         copy("./my-file.txt", "./function");
-
     }
 
     public static boolean copy(String file1, String file2) {
@@ -30,6 +28,5 @@ public class CopyFile {
             e.printStackTrace();
             return false;
         }
-
     }
 }

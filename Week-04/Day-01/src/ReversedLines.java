@@ -9,11 +9,8 @@ public class ReversedLines {
         Path filepath = Paths.get("./assets/reversedlines.txt");
 
         try {
-
             List<String> lines = Files.readAllLines(filepath);
-
             String reversed = "";
-
             for (String str: lines) {
                 for (int i = 0; i < str.length(); i++) {
                     reversed += str.charAt(str.length()-1 -i);
@@ -26,6 +23,5 @@ public class ReversedLines {
             e.printStackTrace();
             System.out.println("Error.");
         }
-
     }
 }

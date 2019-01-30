@@ -18,6 +18,5 @@ public class PrintEachLine {
         } catch (Exception exceptionIO){
             System.out.println("Unable to read file: my-file.txt");
         }
-
     }
 }

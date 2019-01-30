@@ -19,7 +19,6 @@ public class WriteMultipleLines {
     public static void main(String[] args) {
 
         function("./function.txt", "Hello", 10);
-
     }
 
     public static void function(String path, String word, int number) {

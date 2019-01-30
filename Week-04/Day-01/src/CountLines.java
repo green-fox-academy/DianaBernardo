@@ -10,20 +10,18 @@ public class CountLines {
 // It should return zero if it can't open the file, and
 // should not raise any error.
 
-    public static void main(String [] args){
-
+    public static void main(String[] args) {
     }
 
 
-    public static void linesCounter(String fileName){
-        try{
+    public static void linesCounter(String fileName) {
+        try {
             Path filePath = Paths.get(fileName);
             List<String> lines = Files.readAllLines(filePath);
             System.out.println(fileName);
 
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(0);
         }
     }
-
 }

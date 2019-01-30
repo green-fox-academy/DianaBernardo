@@ -24,6 +24,5 @@ public class WriteSingleLine {
         } catch (IOException exception) {
             System.out.println("Unable to write file: my-file.txt");
         }
-
     }
 }
