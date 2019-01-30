@@ -16,8 +16,7 @@ public class MainController {
     this.foxService = foxService;
   }
 
-
-  @RequestMapping ("/")
+  @GetMapping ("/")
   public String home(@RequestParam(value = "name", required = false) String name, Model model) {
     if(name == null){
       return "redirect:/login";
@@ -31,7 +30,7 @@ public class MainController {
   }
 
   @GetMapping("/login")
-  public String showLogin(Fox fox) {
+  public String showLogin() {
     return "login";
   }
 
