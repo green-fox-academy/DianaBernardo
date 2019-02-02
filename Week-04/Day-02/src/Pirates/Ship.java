@@ -2,80 +2,89 @@ package Pirates;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Ship {
+  private List<Pirate> crew = new ArrayList<>();
+  private Pirate captain;
+  private String name;
 
-    List<Pirate> crew;
-    String shipName;
-    boolean winner;
-
-    public Ship() {
-        this.crew = new ArrayList<>();
-        this.shipName = shipName;
-
+  public void fillShip() {
+    int randomNum = (int) (Math.random() * 5 + 1);
+    for (int i = 0; i < randomNum; i++) {
+      crew.add(new Pirate(false));
     }
+    captain = new Pirate(true);
+  }
 
-
-    Pirate captain = new Pirate();
-
-    public void fillShip() {
-        crew.add(captain);
-
-        int numberOfPirates = 0;
-        for (int j = 0; j < (Math.floor(Math.random()) * 100); j++) {
-            crew.add(new Pirate());
-            numberOfPirates++;
-        }
+  public String captainState() {
+    String stateOfCaptain;
+    if (captain.isAlive()) {
+      stateOfCaptain = "alive";
+    } else {
+      stateOfCaptain = "dead";
     }
+    return stateOfCaptain;
+  }
 
-    public int numberAlivePirates() {
-        int alivePirates = 0;
-        for (int i = 0; i < crew.size(); i++) {
-            if (!crew.get(i).alive) {
-                alivePirates++;
-            }
-        }
-        return alivePirates;
+  public int alivePirateCounter() {
+    int counter = 0;
+    for (int i = 0; i < crew.size(); i++) {
+      if (crew.get(i).isAlive()) {
+        counter++;
+      }
     }
+    return counter;
+  }
 
-    public int rumCaptain() {
-        return captain.drunkness;
+  public int getScore() {
+    return alivePirateCounter() - captain.getDrunkness();
+  }
+
+  public void win() {
+    for (int k = 0; k < crew.size(); k++) {
+      int rumAmount = (int) (Math.random() * 10 + 1);
+      crew.get(k).drinkSomeRum(rumAmount);
     }
+    captain.drinkSomeRum((int) (Math.random() * 10 + 1));
+  }
 
-    public int score() {
-        return this.numberAlivePirates() - this.rumCaptain();
+  public void lose() {
+    int deaths = (int) (Math.random() * crew.size() + 1);
+    for (int l = 0; l < deaths; l++) {
+      crew.get(l).die();
     }
+  }
 
-    public boolean battle(Ship otherShip) {
-        if (score() > otherShip.score()) {
-            System.out.println(this.shipName + " is the winner!");
-
-            Random random = new Random();
-            int random2 = random.nextInt(crew.size());
-            for (int i = 0; i < random2; i++) {
-                otherShip.crew.get(i).alive = false;
-            }
-            for (int i = 0; i < random2; i++) {
-                this.crew.get(i).drinkSomeRum();
-            }
-            return this.winner = true;
-        } else {
-            System.out.println(otherShip.shipName + " is the winner!");
-            Random random = new Random();
-            int random3 = random.nextInt(otherShip.crew.size());
-            for (int i = 0; i < random3; i++) {
-                this.crew.get(i).alive = false;
-            }
-            for (int i = 0; i < random3; i++) {
-                otherShip.crew.get(i).drinkSomeRum();
-            }
-            return otherShip.winner = true;
-        }
+  public boolean battle(Ship opponentShip) {
+    if (getScore() > opponentShip.getScore()) {
+      win();
+      opponentShip.lose();
+      return true;
+    } else {
+      opponentShip.win();
+      lose();
+      return false;
     }
+  }
 
-    @Override
-    public String toString() {
-        return "Ship " + shipName + ": The crew has " + crew.size() + " pirates, of whom " + numberAlivePirates() + " are alive. The captain has drunk " + captain.drunkness;
-    }
+  public Pirate getCaptain() {
+    return captain;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String toString() {
+
+    String stringToReturn = "Ship " + getName() +
+        "captain= number of consumed rum is " +
+        captain.getDrunkness() +
+        ", his state is  " +
+        captainState() +
+        ", number of alive pirates is " +
+        alivePirateCounter();
+    return stringToReturn;
+  }
+
 }

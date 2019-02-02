@@ -2,52 +2,71 @@ package Pirates;
 
 public class Pirate {
 
-    String name;
-    int methodcalled = 0;
-    boolean sleeping = false;
-    boolean alive = true;
-    int drunkness = 0;
+    private String name;
+    private int rumCounter = 0;
+    private boolean sleeping = false;
+    private boolean alive = true;
+    private int drunkness = 0;
+    private boolean captain;
 
+  public Pirate(boolean captain) {
+    this.captain = captain;
+  }
 
-    public int drinkSomeRum() {
-        drunkness++;
-        return drunkness;
+  public void drinkSomeRum(int rumAmount) {
+      if(!alive) {
+        System.out.println("The pirate is dead. RIP.");
+      }
+      drunkness += rumAmount;
     }
-
 
     public void howsItGoingMate() {
         if(!alive){
+          System.out.println("The pirate is dead. RIP.");
         }
         if (drunkness <= 4) {
             System.out.println("Pour me anudder!");
+            drinkSomeRum(1);
         } else {
             System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
             sleeping = true;
         }
     }
 
-    public boolean die() {
-        return alive = false;
+    public void die() {
+        alive = false;
     }
 
     public void brawl(Pirate pirateFighter) {
-        int fightresult = (int) Math.floor(Math.random() * 3);
-
-        switch (fightresult) {
-            case 0:
-                pirateFighter.alive = false;
-                break;
-            case 1:
-                this.alive = false;
-                break;
-            case 2:
-                this.sleeping = true;
-                pirateFighter.sleeping = true;
-                break;
-        }
+      if (!pirateFighter.isAlive()) {
+        System.out.println("You cannooooot brawl with a dead pirate!");
+        return;
+      }
+      int chance = (int) (Math.random() * 3 + 1);
+      if (chance == 1) {
+        die();
+      } else if (chance == 2) {
+        pirateFighter.die();
+      } else {
+        die();
+        pirateFighter.die();
+      }
     }
 
-    @Override
+
+  public boolean isAlive() {
+    return alive;
+  }
+
+  public int getDrunkness() {
+    return drunkness;
+  }
+
+  public boolean isCaptain() {
+    return captain;
+  }
+
+  @Override
     public String toString() {
         return "Pirate alive: " + alive;
     }
