@@ -1,18 +1,17 @@
-package com.programmerfoxclub.programmerfoxclub;
+package com.programmerfoxclub.programmerfoxclub.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fox {
-
-
   private String name;
-  private List tricks;
+  private List<String> tricks;
   private String food;
   private String drink;
 
-
   public Fox(String name) {
     this.name = name;
+    tricks = new ArrayList<>();
     this.food = "pizza";
     this.drink = "coke";
   }
@@ -23,6 +22,10 @@ public class Fox {
 
   public List getTricks() {
     return tricks;
+  }
+
+  public void setTricks(List<String> tricks) {
+    this.tricks = tricks;
   }
 
   public String getFood() {

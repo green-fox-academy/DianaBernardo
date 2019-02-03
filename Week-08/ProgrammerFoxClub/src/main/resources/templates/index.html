@@ -7,16 +7,22 @@
 </head>
 <body>
 <a th:href="@{/login}">Information</a><br>
-<a th:href="@{/nutritionStore}">Nutrition Store</a><br>
-<a th:href="@{/trickcenter}">Trick Center</a><br>
+<a th:href="@{/nutrition-store}">Nutrition Store</a><br>
+<a th:href="@{/tricks}">Trick Center</a><br>
 
 <img src="/greenfox.png"/>
 
 <div>
-    <p th:object="${fox}" th:text="'This is ' + *{name} + ' Currently living on ' + *{food} + ' and ' + *{drink}"></p>
+    <p th:object="${fox}" th:text="'This is ' + *{name} + ', currently living on ' + *{food} + ' and ' + *{drink} + '.'"></p>
 </div>
 <div>
     <h2>Known Tricks</h2>
+    <ul th:each="trick : ${tricks}">
+        <li th:text="${trick}"></li>
+    </ul>
+    <div >
+        <option th:value="${trick}" th:text="${trick}"></option>
+    </div>
     <ul>
         <li>${trick}</li>
         <li>${trick}</li>

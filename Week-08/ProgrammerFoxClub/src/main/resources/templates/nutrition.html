@@ -6,20 +6,20 @@
     <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
-<form th:action="@{/nutrition}" method="post" id="eating" th:object="${fox}">
+<form th:action="'/tricks?name=' + ${name}" method="post" id="eating" th:object="${fox.food}">
     <label for="eating">Food</label>
     <select name="food" id="food">
     <div th:each="food : ${foodlist}">
-        <option th:value="${fox.food}" th:text="*{food}"></option>
+        <option th:value="${food}" th:text="${food}"></option>
     </div>
     </select>
     <label for="eating">Drink</label>
     <select name="drink" id="drink">
     <div th:each="drink : ${drinklist}">
-        <option th:value="*{drink}" th:text="*{drink}"></option>
+        <option th:value="${drink}" th:text="${drink}"></option>
     </div>
     </select>
-    <button type="submit" formaction="/index">Change</button>
+    <button type="submit">Change</button>
 </form>
 </body>
 </html>

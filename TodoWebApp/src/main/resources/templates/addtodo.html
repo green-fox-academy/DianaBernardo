@@ -20,6 +20,7 @@
             <select id="assignee" th:field="*{assignee}">
                 <option th:each="assignee : ${assignees}" th:text="${assignee.name}" th:value="${assignee.id}"></option>
             </select>
+        </select>
         <button type="submit">ADD</button>
     </form>
     <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>

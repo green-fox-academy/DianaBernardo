@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tricks</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
-$END$
+<form th:action="'/nutrition-store?name=' + ${name}" method="post" id="tricks" th:object="${fox}">
+    <label for="tricks">Tricks</label>
+    <select name="food" id="food">
+        <div th:each="trick : ${tricks}">
+            <option th:value="${trick}" th:text="${trick}"></option>
+        </div>
+    </select>
+    <button type="submit">Add</button>
+</form>
 </body>
 </html>
